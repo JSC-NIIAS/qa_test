@@ -1,0 +1,250 @@
+/**
+  * \addtogroup nav_orientus
+  * @brief Messages for working with inertial measurement unit Orientus.
+  * @{
+  */
+
+ /**
+ * @struct ZcmOrientusSystemStatus
+ * @brief - 16 fields that indicate the status of the filters
+ *
+ * @var ZcmOrientusSystemStatus::systemFailure
+ * @brief - system failure
+ *
+ * @var ZcmOrientusSystemStatus::accelerometerSensorFailure
+ * @brief - accelerometer sensor failure
+ *
+ * @var ZcmOrientusSystemStatus::gyroscopeSensorFailure
+ * @brief - gyroscope sensor failure
+ *
+ * @var ZcmOrientusSystemStatus::magnetometerSensorFailure
+ * @brief - magnetometer sensor failure
+ *
+ * @var ZcmOrientusSystemStatus::accelerometerOverRange
+ * @brief - accelerometer over range
+ *
+ * @var ZcmOrientusSystemStatus::gyroscopeOverRange
+ * @brief - gyroscope over range
+ *
+ * @var ZcmOrientusSystemStatus::magnetometerOverRange
+ * @brief - magnetometer over range
+ *
+ * @var ZcmOrientusSystemStatus::minimumTemperatureAlarm
+ * @brief - minimum temperature alarm
+ *
+ * @var ZcmOrientusSystemStatus::maximumTemperatureAlarm
+ * @brief - maximum temperature alarm 
+ *
+ * @var ZcmOrientusSystemStatus::lowVoltageAlarm
+ * @brief - low voltage alarm
+ *
+ * @var ZcmOrientusSystemStatus::highVoltageAlarm
+ * @brief - high voltage alarm
+ *
+ * @var ZcmOrientusSystemStatus::dataOutputOverflowAlarm
+ * @brief - data output overflow alarm 
+ */
+ struct ZcmOrientusSystemStatus
+ {
+    boolean systemFailure;
+    boolean accelerometerSensorFailure;
+    boolean gyroscopeSensorFailure;
+    boolean magnetometerSensorFailure;
+    boolean accelerometerOverRange;
+    boolean gyroscopeOverRange;
+    boolean magnetometerOverRange;
+    boolean minimumTemperatureAlarm;
+    boolean maximumTemperatureAlarm;
+    boolean lowVoltageAlarm;
+    boolean highVoltageAlarm;
+    boolean dataOutputOverflowAlarm;
+ } 
+ 
+ /**
+ * @struct ZcmOrientusFilterStatus
+ * @brief - Filter status 
+ *
+ * @var ZcmOrientusFilterStatus::orientationFilterInitialised
+ * @brief - orientation filter initialised
+ *
+ * @var ZcmOrientusFilterStatus::headingInitialised
+ * @brief - heading initialised
+ *
+ * @var ZcmOrientusFilterStatus::magnetometersEnabled
+ * @brief - magnetometers enabled 
+ *
+ * @var ZcmOrientusFilterStatus::velocityHeadingEnabled
+ * @brief - velocity heading enabled 
+ *
+ * @var ZcmOrientusFilterStatus::externalPositionActive
+ * @brief - external position active 
+ *
+ * @var ZcmOrientusFilterStatus::externalVelocityActive
+ * @brief - external velocity active 
+ *
+ * @var ZcmOrientusFilterStatus::externalHeadingActive
+ * @brief - external heading active 
+ */
+ struct ZcmOrientusFilterStatus
+ {
+    boolean orientationFilterInitialised;
+    boolean headingInitialised;
+    boolean magnetometersEnabled;
+    boolean velocityHeadingEnabled;
+    boolean externalPositionActive;
+    boolean externalVelocityActive;
+    boolean externalHeadingActive;
+ } 
+
+/**
+ * @struct ZcmOrientusAccuracy 
+ * @brief Sensor accuracy estimation
+ *
+ * @var ZcmOrientusAccuracy::stdRoll
+ * @brief - roll standard deviation, rad
+ *          
+ * @var ZcmOrientusAccuracy::stdPitch  
+ * @brief - pitch standard deviation, rad
+ *          
+ * @var ZcmOrientusAccuracy::stdHeading          
+ * @brief - heading standard deviation, rad
+ *
+ * @var ZcmOrientusAccuracy::stdQ0 
+ * @brief - Q0 standard deviation
+ *          
+ * @var ZcmOrientusAccuracy::stdQ1  
+ * @brief - Q1 standard deviation
+ *          
+ * @var ZcmOrientusAccuracy::stdQ2         
+ * @brief - Q2 standard deviation
+ *
+ * @var ZcmOrientusAccuracy::stdQ3
+ * @brief - Q3 standard deviation
+ */
+ struct ZcmOrientusAccuracy 
+ {
+    float stdRoll;
+    float stdPitch;
+    float stdHeading;
+    float stdQ0;
+    float stdQ1;
+    float stdQ2;
+    float stdQ3;
+ }
+
+ 
+ /**
+ * @struct ZcmOrientusOrientation
+ * @brief Orientation sensor
+ *
+ * @var ZcmOrientusOrientation::roll
+ * @brief - roll, rad
+ *          
+ * @var ZcmOrientusOrientation::pitch  
+ * @brief - pitch, rad
+ *          
+ * @var ZcmOrientusOrientation::heading         
+ * @brief - heading, rad
+ *
+ * @var ZcmOrientusOrientation::q0
+ * @brief - Q0, rad
+ *          
+ * @var ZcmOrientusOrientation::q1  
+ * @brief - Q1, rad
+ *          
+ * @var ZcmOrientusOrientation::q2         
+ * @brief - Q2, rad 
+ *          
+ * @var ZcmOrientusOrientation::q3         
+ * @brief - Q3, rad
+ */
+ struct ZcmOrientusOrientation 
+ {
+    float roll;
+    float pitch;
+    float heading;
+    float q0;
+    float q1;
+    float q2;
+    float q3;
+ } 
+ 
+ 
+ /**
+ * @struct ZcmOrientusVelocity
+ * @brief Velocity and acceleration sensor
+ *
+ * @var ZcmOrientusVelocity::angularVelocity_X
+ * @brief - angular velocity X, rad/s
+ *          
+ * @var ZcmOrientusVelocity::angularVelocity_Y 
+ * @brief - angular velocity Y, rad/s
+ *          
+ * @var ZcmOrientusVelocity::angularVelocity_Z    
+ * @brief - angular velocity Z, rad/s
+ *
+ * @var ZcmOrientusVelocity::acceleration_X
+ * @brief - acceleration X, m/s/s
+ *          
+ * @var ZcmOrientusVelocity::acceleration_Y
+ * @brief - acceleration Y, m/s/s
+ *          
+ * @var ZcmOrientusVelocity::acceleration_Z
+ * @brief - acceleration Z, m/s/s
+ *          
+ * @var ZcmOrientusVelocity::angularAcceleration_X    
+ * @brief - angular acceleration X, rad/s/s
+ *          
+ * @var ZcmOrientusVelocity::angularAcceleration_Y          
+ * @brief - angular acceleration Y, rad/s/s
+ *          
+ * @var ZcmOrientusVelocity::angularAcceleration_Z 
+ * @brief - angular acceleration Z, rad/s/s
+ */
+ struct ZcmOrientusVelocity 
+ {
+    float angularVelocity_X;
+    float angularVelocity_Y;
+    float angularVelocity_Z;
+    float acceleration_X;
+    float acceleration_Y;
+    float acceleration_Z;
+    float angularAcceleration_X;
+    float angularAcceleration_Y;
+    float angularAcceleration_Z;
+}
+ 
+
+ /**
+ * @struct ZcmOrientusNavGw
+ * @brief The message contains information about inertial measurement unit(IMU): angular rate, the orientation of the body, and parameter accuracy estimation
+ *
+ * @var ZcmOrientusNavGw::orientusSystemStatus
+ * @brief - system status flags
+ *          
+ * @var ZcmOrientusNavGw::orientusFilterStatus
+ * @brief - sensor filter flags
+ *          
+ * @var ZcmOrientusNavGw::orientusAccuracy
+ * @brief - sensor accuracy estimation
+ *          
+ * @var ZcmOrientusNavGw::orientusOrientation
+ * @brief - orientation sensor         
+ *
+ * @var ZcmOrientusNavGw::orientusVelocity
+ * @brief - velocity and acceleration sensor
+ */
+ struct ZcmOrientusNavGw
+ {
+    ZcmService service;
+	
+    ZcmOrientusSystemStatus orientusSystemStatus;
+    ZcmOrientusFilterStatus orientusFilterStatus;
+    ZcmOrientusAccuracy     orientusAccuracy;
+    ZcmOrientusOrientation  orientusOrientation;
+    ZcmOrientusVelocity     orientusVelocity;
+ }
+
+/**
+  * @}
+  */

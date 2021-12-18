@@ -1,0 +1,33 @@
+/**
+  * \addtogroup service
+  * \brief Service message
+  * \{
+  */
+
+//=======================================================================================
+
+//=======================================================================================
+
+/**
+ * \struct ZcmService
+ * \brief Service message
+ * 
+ * \var ZcmService::timestamp
+ * \brief - raw data acquisition time, microseconds
+ *
+ * \var ZcmService::processing
+ * \brief - service processing time (from the moment of receiving these services 
+ *			until the moment of issue), microseconds
+ * 
+ */
+struct ZcmService
+{
+	int64_t timestamp;
+	int32_t processing; 	
+}
+
+//=======================================================================================
+
+/**
+  * \}
+  */
